@@ -1,5 +1,6 @@
-const elements = document.querySelectorAll(".item");
-console.log("Number of categories:", elements.length);
+const itemsNumber = document.querySelectorAll(".item");
+console.log("Number of categories:", itemsNumber.length);
 
-const categories = document.querySelectorAll(".item");
-console.log("Categories:", categories.values)
+const category = document.querySelector(".item h2");
+console.log("Category:", category.textContent);
+
