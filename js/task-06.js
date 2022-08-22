@@ -1,14 +1,12 @@
-const validationInputEl = document.querySelector("body#validation-input");
+const validationInputEl = document.querySelector('body #validation-input[data-length="6"]');
 
-const doFocus = () => {
-    validationInputEl.classList.remove("invalid");
-    validationInputEl.classList.add("valid");
+const doValidation = (event) => {
+    if (event.currentTarget.value.length <= validationInputEl.dataset.length) {
+        validationInputEl.classList.add("valid");
+    }
+    else if (event.currentTarget.value.length >= validationInputEl.dataset.length) {
+        validationInputEl.classList.add("invalid");
+    }
 }
 
-const undoFocus = () => {
-    validationInputEl.classList.remove("valid");
-    validationInputEl.classList.add("invalid");
-}
-
-validationInputEl.addEventListener("focus", doFocus);
-validationInputEl.addEventListener("blur", undoFocus);
+validationInputEl.addEventListener("blur", doValidation);
