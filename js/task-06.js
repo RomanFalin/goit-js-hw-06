@@ -2,9 +2,11 @@ const validationInputEl = document.querySelector('body #validation-input[data-le
 
 const doValidation = (event) => {
     if (event.currentTarget.value.length <= validationInputEl.dataset.length) {
+        validationInputEl.classList.remove("invalid");
         validationInputEl.classList.add("valid");
     }
     else if (event.currentTarget.value.length >= validationInputEl.dataset.length) {
+        validationInputEl.classList.remove("valid");
         validationInputEl.classList.add("invalid");
     }
 }
