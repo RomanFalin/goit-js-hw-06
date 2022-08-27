@@ -13,11 +13,11 @@ const images = [
   },
 ];
 
-
-const imagesList = images.map(image => `<li><img src=${image.url} alt=${image.alt} width=200/></li>`).join("");
 const list = document.querySelector(".gallery");
+
+const imagesList = images.map(({ url, alt }) => `<li><img src="${url}" alt="${alt}" width=200/></li>`).join("");
 list.style.display = "flex";
 list.style.listStyle = "none";
 list.style.alignContent = "center";
 list.style.justifyContent = "space-around";
-list.innerHTML = imagesList;
+list.insertAdjacentHTML("afterbegin", imagesList);
