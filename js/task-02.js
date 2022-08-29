@@ -9,12 +9,14 @@ const ingredients = [
 
 const list = document.querySelector("#ingredients");
 
-for (const ingredient of ingredients) {
+const ingredientsEl = ingredients.map(ingredient => {
   const element = document.createElement("li");
   element.textContent = ingredient;
-  element.classList.toggle("item");
+  element.classList.add("item");
   list.append(element);
-}
+}).join("")
+
+list.innerHTML = ingredientsEl.element.textContent;
 
 /*const elementFirst = document.createElement("li");
 elementFirst.textContent = ingredients[0];
@@ -40,8 +42,7 @@ const elementSixth = document.createElement("li");
 elementSixth.textContent = ingredients[5];
 elementSixth.classList.toggle("item");
 
-const list = document.querySelector("#ingredients");
 list.append(elementFirst, elementSecond, elementThird, elementFourth, elementFifth, elementSixth);*/
 
-/*const ingredientsEl = ingredients.map(ingredient => `<li class="item">${ingredient}</>`);
+/*const ingredientsEl = ingredients.map(ingredient => `<li class="item">${ingredient}</>`).join("");
 list.innerHTML = ingredientsEl;*/
